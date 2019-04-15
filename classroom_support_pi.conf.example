@@ -1,0 +1,5 @@
+#Enter the host address of your moodle server
+HOST=https://yourserver.com
+
+#Enter the token from your Moodle server
+TOKEN=YOURTOKEN
