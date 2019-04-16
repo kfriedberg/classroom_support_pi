@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENTDIR=`dirname "$0"`
+CURRENTDIR=`dirname "${BASH_SOURCE[0]}"`
 
 apt-get -y install unclutter
 
