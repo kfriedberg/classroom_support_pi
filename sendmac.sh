@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. classroom_support_pi.conf
+[[ -f classroom_support_pi.conf ]] && . classroom_support_pi.conf || echo "classroom_support_pi.conf not found, please copy it from classroom_support_pi.conf.example"
 
 MAC=$(ip -o link show dev eth0 | grep -Po 'ether \K[^ ]*')
 IP=$(hostname -I)
