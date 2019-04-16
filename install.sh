@@ -2,10 +2,13 @@
 
 apt-get -y install unclutter
 
+mkdir -p /home/pi/.config/lxsession/LXDE-pi
 ln -s autostart /home/pi/.config/lxsession/LXDE-pi/autostart
 
+mkdir -p /etc/polkit-1/localauthority/50-local.d
 ln -s 10-nopasswd_pi_reboot.pkla /etc/polkit-1/localauthority/50-local.d/10-nopasswd_pi_reboot.pkla
 
+mkdir -p /etc/polkit-1/rules.d
 ln -s 10-nopasswd_pi_reboot.rules /etc/polkit-1/rules.d/10-nopasswd_pi_reboot.rules
 
 ln -s 020_pi-passwd-override /etc/sudoers.d/020_pi-passwd-override
