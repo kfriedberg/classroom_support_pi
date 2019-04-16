@@ -1,4 +1,4 @@
-apt -y install unclutter
+apt-get -y install unclutter
 
 ln -s autostart /home/pi/.config/lxsession/LXDE-pi
 
