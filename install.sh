@@ -18,7 +18,7 @@ ln -sf $CURRENTDIR/020_pi-passwd-override /etc/sudoers.d/020_pi-passwd-override
 echo */5 * * * * pi $CURRENTDIR/sendmac.sh > classroom_support-cronjob
 chmod a+x sendmac.sh
 
-ln -sf ./classroom_support-cronjob /etc/cron.d/classroom_support-cronjob
+ln -sf $CURRENTDIR/classroom_support-cronjob /etc/cron.d/classroom_support-cronjob
 
 chown root: *
 
