@@ -9,5 +9,5 @@ If the pi still has the default password of raspberry, change it with passwd
 
 Fill in values in classroom_support_pi.conf
 
-* chmod u+x install.sh
+* chmod +x install.sh
 * sudo ./install.sh
