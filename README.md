@@ -4,6 +4,7 @@
 * cd classroom_support_pi
 * cp classroom_support_pi.conf.example
 * nano classroom_support_pi.conf
+
 Fill in values in classroom_support_pi.conf
 
 * chmod u+x install.sh
