@@ -2,7 +2,7 @@
 
 apt-get -y install unclutter
 
-ln -s autostart /home/pi/.config/lxsession/LXDE-pi
+ln -s autostart /home/pi/.config/lxsession/LXDE-pi/autostart
 
 ln -s 10-nopasswd_pi_reboot.pkla /etc/polkit-1/localauthority/50-local.d/10-nopasswd_pi_reboot.pkla
 
