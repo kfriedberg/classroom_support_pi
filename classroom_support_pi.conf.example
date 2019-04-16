@@ -3,3 +3,5 @@ HOST=https://yourserver.com
 
 #Enter the token from your Moodle server
 TOKEN=YOURTOKEN
+
+MOODLESERVER=https://your.moodle.server.com
