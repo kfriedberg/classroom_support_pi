@@ -12,6 +12,8 @@ apt-get -y install unclutter
 
 mkdir -p /home/pi/.config/lxsession/LXDE-pi
 ln -sf $SOURCEDIR/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
+ln -sf $SOURCEDIR/autostart_helper.sh /home/pi/.config/lxsession/LXDE-pi/autostart_helper.sh
+chmod +x autostart_helper.sh
 
 mkdir -p /etc/polkit-1/localauthority/50-local.d
 ln -sf $SOURCEDIR/10-nopasswd_pi_reboot.pkla /etc/polkit-1/localauthority/50-local.d/10-nopasswd_pi_reboot.pkla
@@ -22,7 +24,7 @@ ln -sf $SOURCEDIR/10-nopasswd_pi_reboot.rules /etc/polkit-1/rules.d/10-nopasswd_
 ln -sf $SOURCEDIR/020_pi-passwd-override /etc/sudoers.d/020_pi-passwd-override
 
 echo "*/1 * * * * root /bin/bash $CURRENTDIR/sendmac.sh" > classroom_support_cronjob
-chmod a+x sendmac.sh
+chmod +x sendmac.sh
 
 ln -sf $SOURCEDIR/classroom_support_cronjob /etc/cron.d/classroom_support_cronjob
 
