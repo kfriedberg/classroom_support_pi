@@ -8,5 +8,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 CURRENTDIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
+echo $CURRENTDIR
+
 . $CURRENTDIR/classroom_support_pi.conf
 chromium --noerrdialogs --disable-infobars --kiosk --app=$HOST/local/selfservehd/client/
