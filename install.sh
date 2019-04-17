@@ -31,6 +31,7 @@ ln -sf $SOURCEDIR/classroom_support_cronjob /etc/cron.d/classroom_support_cronjo
 chown root: *
 
 # Wait for network at boot
+mkdir -p /etc/systemd/system/dhcpcd.service.d/
 cat > /etc/systemd/system/dhcpcd.service.d/wait.conf << EOF
 
 systemctl enable ssh
