@@ -23,7 +23,7 @@ ln -sf $SOURCEDIR/10-nopasswd_pi_reboot.rules /etc/polkit-1/rules.d/10-nopasswd_
 
 ln -sf $SOURCEDIR/020_pi-passwd-override /etc/sudoers.d/020_pi-passwd-override
 
-echo "*/1 * * * * root /bin/bash $SOURCEDIR/sendmac.sh" > classroom_support_cronjob
+echo "*/5 * * * * root /bin/bash $SOURCEDIR/sendmac.sh" > classroom_support_cronjob
 chmod +x sendmac.sh
 
 ln -sf $SOURCEDIR/classroom_support_cronjob /etc/cron.d/classroom_support_cronjob
