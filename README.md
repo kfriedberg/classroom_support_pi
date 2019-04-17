@@ -11,3 +11,5 @@ Fill in values in classroom_support_pi.conf
 
 * chmod +x install.sh
 * sudo ./install.sh
+
+Reboot
