@@ -12,4 +12,4 @@ SOURCEDIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
 @sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/pi/.config/chromium/Default/Preferences
 @sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/pi/.config/chromium/Default/Preferences
-chromium --noerrdialogs --disable-infobars --kiosk --app=$HOST/local/selfservehd/client/
+chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$HOST/local/roomsupport/client/
