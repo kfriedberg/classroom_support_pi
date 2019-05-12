@@ -10,6 +10,8 @@ SOURCEDIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
 . $SOURCEDIR/classroom_support_pi.conf
 
+MAC=$(ip -o link show dev eth0 | grep -Po 'ether \K[^ ]*')
+
 @sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/pi/.config/chromium/Default/Preferences
 @sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/pi/.config/chromium/Default/Preferences
-chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$HOST/local/roomsupport/client/
+chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$HOST/local/roomsupport/client/?mac=$MAC
