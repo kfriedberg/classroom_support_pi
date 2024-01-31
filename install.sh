@@ -11,15 +11,14 @@ SOURCEDIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 apt-get -y install unclutter
 
 # autostart
-mkdir -p /home/pi/.config/lxsession/LXDE-pi
-ln -sf $SOURCEDIR/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
-ln -sf $SOURCEDIR/autostart_helper.sh /home/pi/.config/lxsession/LXDE-pi/autostart_helper.sh
+echo [Desktop Entry] > /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
+echo Type=Application >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
+echo Name=Classroom support Pi >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
+echo Exec=$SOURCEDIR/autostart_helper.sh >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
+chmod +x /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
 chmod +x autostart_helper.sh
 
 # allow reboot over SSH
-mkdir -p /etc/polkit-1/localauthority/50-local.d
-ln -sf $SOURCEDIR/10-nopasswd_pi_reboot.pkla /etc/polkit-1/localauthority/50-local.d/10-nopasswd_pi_reboot.pkla
-
 mkdir -p /etc/polkit-1/rules.d
 ln -sf $SOURCEDIR/10-nopasswd_pi_reboot.rules /etc/polkit-1/rules.d/10-nopasswd_pi_reboot.rules
 
