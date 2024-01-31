@@ -14,7 +14,7 @@ apt-get -y install unclutter
 echo [Desktop Entry] > /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
 echo Type=Application >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
 echo Name=Classroom support Pi >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
-echo Exec=$SOURCEDIR/autostart_helper.sh >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
+echo Exec=/bin/bash $SOURCEDIR/autostart_helper.sh >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
 chmod +x /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
 chmod +x autostart_helper.sh
 
