@@ -1,1 +1,1 @@
-pi ALL=(ALL) PASSWD: ALL
+%sudo ALL=(ALL) PASSWD: ALL
