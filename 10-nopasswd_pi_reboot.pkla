@@ -1,5 +1,0 @@
-[Let user Pi reboot Pi device]
-Identity=unix-user:pi
-Action=org.freedesktop.login1.reboot
-ResultAny=yes
-ResultInactive=yes
