@@ -20,10 +20,10 @@ chmod +x autostart_helper.sh
 
 # allow reboot over SSH
 mkdir -p /etc/polkit-1/rules.d
-ln -sf $SOURCEDIR/10-nopasswd_pi_reboot.rules /etc/polkit-1/rules.d/10-nopasswd_pi_reboot.rules
+ln -sf $SOURCEDIR/10-nopasswd_sudo_grp_reboot.rules /etc/polkit-1/rules.d/10-nopasswd_sudo_grp_reboot.rules
 
 # require password for sudo operations
-ln -sf $SOURCEDIR/020_pi-passwd-override /etc/sudoers.d/020_pi-passwd-override
+ln -sf $SOURCEDIR/020_sudo-grp-passwd-override /etc/sudoers.d/020_sudo-grp-passwd-override
 
 # heartbeat
 echo "*/5 * * * * root /bin/bash $SOURCEDIR/sendmac.sh" > classroom_support_cronjob
