@@ -11,6 +11,6 @@ SOURCEDIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 [[ -f $SOURCEDIR/classroom_support_pi.conf ]] && . $SOURCEDIR/classroom_support_pi.conf || echo "classroom_support_pi.conf not found, please copy it from classroom_support_pi.conf.example"
 
 MAC=$(ip -o link show dev eth0 | grep -Po 'ether \K[^ ]*')
-IP=$(hostname -I)
+IP=$(hostname -I) | grep -Po '((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}' # only ipv4 address
 echo "$MAC"
 curl "$HOST/webservice/rest/server.php" -d"wstoken=$TOKEN&wsfunction=roomsupport_get_raspberry_pi&mac=$MAC&ip=$IP"
