@@ -19,4 +19,9 @@ MAC=$(ip -o link show dev eth0 | grep -Po 'ether \K[^ ]*')
 
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/$USER/.config/chromium/Default/Preferences
 sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/$USER/.config/chromium/Default/Preferences
-chromium-browser --noerrdialogs --disable-infobars --no-first-run --kiosk --app=$HOST/local/roomsupport/client/?mac=$MAC
+
+if command -v chromium-browser >/dev/null 2>&1; then
+  chromium-browser --noerrdialogs --disable-infobars --no-first-run --kiosk --app=$HOST/local/roomsupport/client/?mac=$MAC
+else
+  chromium --noerrdialogs --disable-infobars --no-first-run --kiosk --app=$HOST/local/roomsupport/client/?mac=$MAC
+fi
