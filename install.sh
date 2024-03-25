@@ -11,6 +11,7 @@ SOURCEDIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 apt-get -y install unclutter
 
 # autostart
+mkdir -p /home/$SUDO_USER/.config/autostart/
 echo [Desktop Entry] > /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
 echo Type=Application >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
 echo Name=Classroom support Pi >> /home/$SUDO_USER/.config/autostart/classroom_support_pi.desktop
