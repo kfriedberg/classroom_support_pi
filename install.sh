@@ -34,7 +34,9 @@ chown root: *
 
 # wait for network at boot
 mkdir -p /etc/systemd/system/dhcpcd.service.d/
-cat > /etc/systemd/system/dhcpcd.service.d/wait.conf <<< EOF
+echo [Service] > /etc/systemd/system/dhcpcd.service.d/wait.conf
+echo ExecStart= >> /etc/systemd/system/dhcpcd.service.d/wait.conf
+echo ExecStart=/usr/bin/dhcpd -w -q >> /etc/systemd/system/dhcpcd.service.d/wait.conf
 
 systemctl enable ssh
 systemctl start ssh
