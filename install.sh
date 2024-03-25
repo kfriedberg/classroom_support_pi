@@ -38,5 +38,10 @@ echo [Service] > /etc/systemd/system/dhcpcd.service.d/wait.conf
 echo ExecStart= >> /etc/systemd/system/dhcpcd.service.d/wait.conf
 echo ExecStart=/usr/sbin/dhcpcd -w -q >> /etc/systemd/system/dhcpcd.service.d/wait.conf
 
+# firewall
+apt-get -y install ufw
+ufw allow ssh
+ufw enable
+
 systemctl enable ssh
 systemctl start ssh
