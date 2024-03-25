@@ -36,7 +36,7 @@ chown root: *
 mkdir -p /etc/systemd/system/dhcpcd.service.d/
 echo [Service] > /etc/systemd/system/dhcpcd.service.d/wait.conf
 echo ExecStart= >> /etc/systemd/system/dhcpcd.service.d/wait.conf
-echo ExecStart=/usr/bin/dhcpd -w -q >> /etc/systemd/system/dhcpcd.service.d/wait.conf
+echo ExecStart=/usr/sbin/dhcpcd -w -q >> /etc/systemd/system/dhcpcd.service.d/wait.conf
 
 systemctl enable ssh
 systemctl start ssh
