@@ -45,3 +45,12 @@ ufw enable
 
 systemctl enable ssh
 systemctl start ssh
+
+# suppress update notfications in X11/LXDE
+if [ ! -f /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel ]; then
+    mkdir /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels
+    cp /etc/xdg/lxpanel/LXDE-pi/panels/panel /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel
+    chown -R $SUDO_USER /home/$SUDO_USER/.config/
+fi
+sed -i -E '/  type=updater/{N;N;N;s/  Config \{\n(.*\n)?  \}/  Config \{n    Interval=0\n  \}/} /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel
+killall -SIGHUP lxpanel
