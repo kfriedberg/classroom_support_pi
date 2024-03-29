@@ -52,5 +52,5 @@ if [ ! -f /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel ]; then
     cp /etc/xdg/lxpanel/LXDE-pi/panels/panel /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel
     chown -R $SUDO_USER /home/$SUDO_USER/.config/lxpanel/
 fi
-sed -i -E '/  type=updater/{N;N;N;s/  Config \{\n(.*\n)?  \}/  Config \{\n    Interval=0\n  \}/} /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel
+sed -i -E '/  type=updater/{N;N;N;s/  Config \{\n(.*\n)?  \}/  Config \{\n    Interval=0\n  \}/}' /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel
 killall -SIGHUP lxpanel
