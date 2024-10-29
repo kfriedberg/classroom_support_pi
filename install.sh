@@ -46,7 +46,7 @@ systemctl start ssh
 # suppress OS update notifications
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
   apt-get -y install crudini
-  crudini --inplace --set --ini-options=nospace ~/.config/wf-panel-pi.ini panel updater_interval 0
+  crudini --inplace --set --ini-options=nospace /home/$SUDO_USER/.config/wf-panel-pi.ini panel updater_interval 0
   killall -SIGHUP wf-panel-pi
 else
   if [ ! -f /home/$SUDO_USER/.config/lxpanel/LXDE-pi/panels/panel ]; then
