@@ -33,10 +33,7 @@ ln -sf $SOURCEDIR/classroom_support_cronjob /etc/cron.d/classroom_support_cronjo
 chown root: *
 
 # wait for network at boot
-mkdir -p /etc/systemd/system/dhcpcd.service.d/
-echo [Service] > /etc/systemd/system/dhcpcd.service.d/wait.conf
-echo ExecStart= >> /etc/systemd/system/dhcpcd.service.d/wait.conf
-echo ExecStart=/usr/sbin/dhcpcd -w -q >> /etc/systemd/system/dhcpcd.service.d/wait.conf
+raspi-config nonint do_boot_wait 1
 
 # firewall
 apt-get -y install ufw fail2ban
