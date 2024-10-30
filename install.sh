@@ -35,8 +35,15 @@ chown root: *
 # wait for network at boot
 raspi-config nonint do_boot_wait 1
 
-# firewall
+# firewall and fail2ban
 apt-get -y install ufw fail2ban
+cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+echo [ssh] >> /etc/fail2ban/jail.local
+echo enabled  = true >> /etc/fail2ban/jail.local
+echo port     = ssh >> /etc/fail2ban/jail.local
+echo filter   = sshd >> /etc/fail2ban/jail.local
+echo backend  = systemd >> /etc/fail2ban/jail.local
+echo maxretry = 6 >> /etc/fail2ban/jail.local
 ufw allow ssh
 ufw enable
 
